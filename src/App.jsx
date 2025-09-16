@@ -30,11 +30,11 @@
 
 
 import React from "react";
-import Navbar from "./Components/Navbar";
+import Navbar from "./components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./Pages/Home";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Footer from "./Components/Footer";
+import Footer from "./components/Footer";
 import Testimonials from "./Components/Testimonials/Testimonials"
 import { Route, Routes } from 'react-router-dom'
 
