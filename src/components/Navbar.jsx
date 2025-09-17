@@ -75,7 +75,7 @@
 
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
-import logo from "../assets/logo1.png";
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -116,14 +116,29 @@ const Navbar = () => {
             onMouseLeave={() => setDropdown(null)}
             onClick={() => toggleDropdown("study")} // mobile
           >
-            Study Oversease ▾
+            Study India ▾
             <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
-              <li>Tamilnadu</li>
+             
               <li>Kerala</li>
-              <li>Karnataka</li>
               <li>Bangalore</li>
+                <li>Chennai</li>
+                 <li>Mangalore</li>
             </ul>
           </li>
+
+            <li
+            className={`dropdown ${dropdown === "study" ? "active" : ""}`}
+            onMouseEnter={() => setDropdown("study")}
+            onMouseLeave={() => setDropdown(null)}
+            onClick={() => toggleDropdown("study")} // mobile
+          >
+            Study Abroad ▾
+            <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
+             
+              <li>Tajikistan</li>
+            </ul>
+          </li>
+
 
           {/* Dropdown Example 2 */}
           <li
