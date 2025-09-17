@@ -57,10 +57,10 @@ function Home() {
               <div className="hero-content">
                 {/* Text Section */}
                 <div className="hero-text">
-                  <h1>{data.title}</h1>
+                  <h2>{data.title}</h2>
                   <p>{data.description}</p>
                   <div className="button-container">
-                    <button className="cta-button"><Link to="/contact">Free Consultation</Link></button>
+                    <button className="cta-button"><Link to="/contact"><span className="free">Free Consultation</span></Link></button>
                     <a
                       href="https://wa.me/9746416907" // Replace with your WhatsApp number
                       className="whatsapp-button"
