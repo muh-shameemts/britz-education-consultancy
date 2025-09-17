@@ -1,23 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaWhatsapp, FaInstagram, FaGlobe, FaEnvelope, FaPhone } from "react-icons/fa";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("✅ Thank you! This is only frontend. You can connect backend later.");
-    setFormData({ name: "", email: "", message: "" });
-  };
-
   return (
     <div style={styles.page}>
       <h1 style={styles.heading}>Contact Us</h1>
@@ -38,49 +22,39 @@ const ContactPage = () => {
         <div style={styles.card}>
           <FaGlobe size={28} color="#2c3e50" />
           <a href="https://britz-education-consultancy-v4s2.vercel.app/" target="_blank" rel="noreferrer">
-            Britz-website.com
+           <p> Britz-website.com</p>
           </a>
         </div>
       </div>
 
       {/* Social Media Links */}
       <div style={styles.socials}>
-        <a
-          href="https://wa.me/9746416907"
-          target="_blank"
-          rel="noreferrer"
-          style={styles.iconLink}
-        >
+        <a href="https://wa.me/9746416907" target="_blank" rel="noreferrer" style={styles.iconLink}>
           <FaWhatsapp size={40} color="#25D366" />
         </a>
-        <a
-          href="https://www.instagram.com/britz_education?igsh=Z202aXdjaTBjMmFy"
-          target="_blank"
-          rel="noreferrer"
-          style={styles.iconLink}
-        >
+        <a href="https://www.instagram.com/britz_education?igsh=Z202aXdjaTBjMmFy" target="_blank" rel="noreferrer" style={styles.iconLink}>
           <FaInstagram size={40} color="#E1306C" />
         </a>
-        <a
-          href="https://britz-education-consultancy-v4s2.vercel.app/"
-          target="_blank"
-          rel="noreferrer"
-          style={styles.iconLink}
-        >
+        <a href="https://britz-education-consultancy-v4s2.vercel.app/" target="_blank" rel="noreferrer" style={styles.iconLink}>
           <FaGlobe size={40} color="#2c3e50" />
         </a>
       </div>
 
-      {/* Contact Form */}
-      <div style={styles.formContainer}>
+      {/* Contact Form (Formsubmit version) */}
+      {/* <div style={styles.formContainer}>
         <h2 style={styles.formTitle}>Send us a Message</h2>
-        <form onSubmit={handleSubmit} style={styles.form}>
+        <form 
+          action="https://docs.google.com/forms/d/1_MFQHHkP8IUFHfIT29aq8cNB_7lCSk8NiQC-ets_6qE/edit" 
+          method="POST"
+          style={styles.form}
+        >
+          Anti-bot hidden input
+          <input type="hidden" name="_captcha" value="false" />
+
           <input
             type="text"
             name="name"
             placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
             required
             style={styles.input}
           />
@@ -88,8 +62,6 @@ const ContactPage = () => {
             type="email"
             name="email"
             placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
             required
             style={styles.input}
           />
@@ -97,8 +69,6 @@ const ContactPage = () => {
             name="message"
             placeholder="Your Message"
             rows="5"
-            value={formData.message}
-            onChange={handleChange}
             required
             style={styles.textarea}
           ></textarea>
@@ -106,7 +76,8 @@ const ContactPage = () => {
             Send Message
           </button>
         </form>
-      </div>
+        <p style={{marginTop: '10px', color: '#555'}}>You will receive a confirmation in your email.</p>
+      </div> */}
     </div>
   );
 };
@@ -118,6 +89,7 @@ const styles = {
     background: "#f5f6fa",
     padding: "40px 20px",
     textAlign: "center",
+    margin:"170px"
   },
   heading: {
     fontSize: "32px",

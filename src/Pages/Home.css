@@ -5,7 +5,19 @@
   box-sizing: border-box;
 }
 
-/* Hero Section */
+/* Hero Section
+.hero-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  color: black;
+  padding: 4rem 6%;
+  overflow: hidden;
+} */
+
 .hero-container {
   position: relative;
   min-height: 100vh;
@@ -17,6 +29,19 @@
   padding: 4rem 6%;
   overflow: hidden;
 }
+
+.hero-container::before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  width: 60%;
+  height: 100%;
+  background: #0a68c7;
+  clip-path: ellipse(80% 100% at 100% 50%);
+  z-index: 0;
+}
+
 
 /* Optional overlay */
 .overlay {

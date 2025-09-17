@@ -107,7 +107,7 @@ const Navbar = () => {
 
         {/* Nav Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-         <li> <Link to="/">Home</Link></li>
+         <li> <Link to="/"><span className="item">Home</span></Link></li>
         
           {/* Dropdown Example 1 */}
           <li
