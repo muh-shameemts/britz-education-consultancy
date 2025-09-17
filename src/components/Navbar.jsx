@@ -127,13 +127,13 @@ const Navbar = () => {
           </li>
 
             <li
-            className={`dropdown ${dropdown === "study" ? "active" : ""}`}
-            onMouseEnter={() => setDropdown("study")}
+            className={`dropdown ${dropdown === "abroad" ? "active" : ""}`}
+            onMouseEnter={() => setDropdown("abroad")}
             onMouseLeave={() => setDropdown(null)}
-            onClick={() => toggleDropdown("study")} // mobile
+            onClick={() => toggleDropdown("abroad")} // mobile
           >
             Study Abroad ▾
-            <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
+            <ul className={`dropdown-menu ${dropdown === "abroad" ? "show" : ""}`}>
              
               <li>Tajikistan</li>
             </ul>
@@ -163,7 +163,9 @@ const Navbar = () => {
             <li> <Link to="/testimonials">Testimonials</Link></li>
 
           <li>
-            <button className="btn">Contact Us</button>
+            <button className="btn">
+              <Link to="/contact">Contact Us</Link>
+              </button>
           </li>
         </ul>
 

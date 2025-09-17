@@ -35,6 +35,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./Pages/Home";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Footer from "./components/Footer";
+import Contact from "./Pages/Contact"
 import About from "./Pages/About"
 import Testimonials from "./components/Testimonials/Testimonials"
 import { Route, Routes } from 'react-router-dom'
@@ -48,6 +49,7 @@ function App() {
      <Route path='/' element={<Home/>} />
      <Route path='/about' element={<About/>} />
      <Route path='/testimonials' element={<Testimonials/>} />
+     <Route path='/contact' element={<Contact/>} />
       </Routes>
 
       <Footer/>

@@ -1,48 +1,199 @@
 import React, { useState } from "react";
+import { FaWhatsapp, FaInstagram, FaGlobe, FaEnvelope, FaPhone } from "react-icons/fa";
 
-export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState("");
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit = async e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-    try {
-      // If you don't have a backend, use Formspree/Netlify Forms or connect to an endpoint later
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
-      });
-      setStatus("Message sent!");
-      setForm({ name: "", email: "", message: "" });
-    } catch (err) {
-      console.error(err);
-      setStatus("Failed to send (no backend configured).");
-    }
+    alert("✅ Thank you! This is only frontend. You can connect backend later.");
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section className="py-4">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit} style={{ maxWidth: 600 }}>
-        <div className="mb-3">
-          <label className="form-label">Name</label>
-          <input value={form.name} onChange={handleChange} name="name" className="form-control" required/>
+    <div style={styles.page}>
+      <h1 style={styles.heading}>Contact Us</h1>
+      <p style={styles.subtitle}>
+        Reach out to our Education Consultancy for admissions and guidance in Kerala, Tamil Nadu & Karnataka.
+      </p>
+
+      {/* Contact Details */}
+      <div style={styles.contactInfo}>
+        <div style={styles.card}>
+          <FaPhone size={28} color="#2c3e50" />
+          <p>+91 98765 43210</p>
         </div>
-        <div className="mb-3">
-          <label className="form-label">Email</label>
-          <input value={form.email} onChange={handleChange} name="email" type="email" className="form-control" required/>
+        <div style={styles.card}>
+          <FaEnvelope size={28} color="#2c3e50" />
+          <p>info@consultancy.com</p>
         </div>
-        <div className="mb-3">
-          <label className="form-label">Message</label>
-          <textarea value={form.message} onChange={handleChange} name="message" className="form-control" rows="4" required/>
+        <div style={styles.card}>
+          <FaGlobe size={28} color="#2c3e50" />
+          <a href="https://britz-education-consultancy-v4s2.vercel.app/" target="_blank" rel="noreferrer">
+            Britz-website.com
+          </a>
         </div>
-        <button className="btn btn-primary" type="submit">Send</button>
-        <div className="mt-2">{status}</div>
-      </form>
-    </section>
+      </div>
+
+      {/* Social Media Links */}
+      <div style={styles.socials}>
+        <a
+          href="https://wa.me/9746416907"
+          target="_blank"
+          rel="noreferrer"
+          style={styles.iconLink}
+        >
+          <FaWhatsapp size={40} color="#25D366" />
+        </a>
+        <a
+          href="https://www.instagram.com/britz_education?igsh=Z202aXdjaTBjMmFy"
+          target="_blank"
+          rel="noreferrer"
+          style={styles.iconLink}
+        >
+          <FaInstagram size={40} color="#E1306C" />
+        </a>
+        <a
+          href="https://britz-education-consultancy-v4s2.vercel.app/"
+          target="_blank"
+          rel="noreferrer"
+          style={styles.iconLink}
+        >
+          <FaGlobe size={40} color="#2c3e50" />
+        </a>
+      </div>
+
+      {/* Contact Form */}
+      <div style={styles.formContainer}>
+        <h2 style={styles.formTitle}>Send us a Message</h2>
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            style={styles.input}
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            style={styles.input}
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            required
+            style={styles.textarea}
+          ></textarea>
+          <button type="submit" style={styles.button}>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
   );
-}
+};
+
+// Inline Styles
+const styles = {
+  page: {
+    fontFamily: "Arial, sans-serif",
+    background: "#f5f6fa",
+    padding: "40px 20px",
+    textAlign: "center",
+  },
+  heading: {
+    fontSize: "32px",
+    color: "#2c3e50",
+    marginBottom: "10px",
+  },
+  subtitle: {
+    fontSize: "16px",
+    color: "#555",
+    marginBottom: "30px",
+  },
+  contactInfo: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "40px",
+    marginBottom: "30px",
+    flexWrap: "wrap",
+  },
+  card: {
+    background: "#fff",
+    padding: "15px 20px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+    textAlign: "center",
+  },
+  socials: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "20px",
+    marginBottom: "40px",
+  },
+  iconLink: {
+    textDecoration: "none",
+  },
+  formContainer: {
+    maxWidth: "600px",
+    margin: "0 auto",
+    background: "#fff",
+    padding: "25px",
+    borderRadius: "10px",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+  },
+  formTitle: {
+    marginBottom: "15px",
+    color: "#2c3e50",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  input: {
+    padding: "12px",
+    margin: "8px 0",
+    border: "1px solid #ccc",
+    borderRadius: "6px",
+    fontSize: "16px",
+    outline: "none",
+  },
+  textarea: {
+    padding: "12px",
+    margin: "8px 0",
+    border: "1px solid #ccc",
+    borderRadius: "6px",
+    fontSize: "16px",
+    outline: "none",
+  },
+  button: {
+    background: "#2c3e50",
+    color: "#fff",
+    border: "none",
+    padding: "12px",
+    fontSize: "16px",
+    borderRadius: "6px",
+    cursor: "pointer",
+    marginTop: "10px",
+  },
+};
+
+export default ContactPage;

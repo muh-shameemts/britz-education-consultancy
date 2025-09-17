@@ -75,8 +75,11 @@
 
 import React from "react";
 import "./About.css"; // custom CSS file
+import office1 from "../assets/office1.jpg"
+import office2 from "../assets/office2.jpg"
 
 const About = () => {
+  
   return (
     <section className="about">
       <div className="about-container">
@@ -124,8 +127,8 @@ const About = () => {
         </div>
 
         {/* Founders Section */}
-        <div className="founders-section">
-          <h2 className="about-title">Our Founders & Directors</h2>
+        <div className="office">
+          {/* <h2 className="about-title">Our Founders & Directors</h2>
           <div className="founders-grid">
             <div className="founder-card">
               <img
@@ -156,6 +159,10 @@ const About = () => {
               <h3>Mr. Rahim Khan</h3>
               <p>Director – Operations</p>
             </div>
+          </div> */}
+          <div className="d-flex m-4">
+           <div><img className="office1" src={office1} alt="" /></div> 
+           <div><img className="office2" src={office2} alt="" /></div>  
           </div>
         </div>
       </div>

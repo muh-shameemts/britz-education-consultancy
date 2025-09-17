@@ -9,6 +9,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Home.css"; 
+import { Link } from "react-router-dom";
+
 
 const ImageList = [
   {
@@ -58,9 +60,9 @@ function Home() {
                   <h1>{data.title}</h1>
                   <p>{data.description}</p>
                   <div className="button-container">
-                    <button className="cta-button">Free Consultation</button>
+                    <button className="cta-button"><Link to="/contact">Free Consultation</Link></button>
                     <a
-                      href="https://wa.me/8547081731" // Replace with your WhatsApp number
+                      href="https://wa.me/9746416907" // Replace with your WhatsApp number
                       className="whatsapp-button"
                       target="_blank"
                       rel="noopener noreferrer"
