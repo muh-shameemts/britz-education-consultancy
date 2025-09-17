@@ -1,6 +1,7 @@
- *{
-    margin-top: 3px;
+* {
+  margin-top: 3px;
 }
+
 .about {
   background: #f9f9f9;
   padding: 60px 20px;
@@ -75,10 +76,11 @@
 
 .about-extra strong {
   color: #111;
-} 
+}
 
-
-/* Founders Section */
+/* ------------------
+   Founders Section
+------------------ */
 .founders-section {
   margin-top: 50px;
 }
@@ -124,20 +126,81 @@
   color: #555;
 }
 
-/* 📱 Responsive Founders */
+/* ------------------
+   📱 Responsive Design
+------------------ */
 @media (max-width: 992px) {
+  .about-container {
+    padding: 30px;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-intro {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr; /* Stack mission & vision */
+    gap: 15px;
+  }
+
+  .about-card h3 {
+    font-size: 20px;
+  }
+
+  .about-card p {
+    font-size: 15px;
+  }
+
   .founders-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* 2 founders per row on tablet */
   }
 }
 
 @media (max-width: 600px) {
+  .about {
+    padding: 40px 15px;
+  }
+
+  .about-container {
+    padding: 20px;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+
+  .about-intro {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .about-extra {
+    font-size: 16px;
+  }
+
   .founders-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 1 founder per row on mobile */
   }
 
   .founder-img {
     width: 80px;
     height: 80px;
+  }
+
+  .founder-card {
+    padding: 15px;
+  }
+
+  .founder-card h3 {
+    font-size: 18px;
+  }
+
+  .founder-card p {
+    font-size: 14px;
   }
 }
