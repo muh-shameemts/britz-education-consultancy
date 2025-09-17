@@ -1,90 +1,48 @@
-import React, { useRef } from 'react'
-import './Testimonials.css'
-import next_icon from '../../assets/next-icon.png'
-import back from '../../assets/back-icon.png'
-import user_1 from '../../assets/user-1.png'
-import user_2 from '../../assets/user-2.png'
-import user_3 from '../../assets/user-3.png'
-import user_4 from '../../assets/user-4.png'
+import React from "react";
+import "./Testimonials.css";
 
 const Testimonials = () => {
+  const data = [
+    {
+      name: "Akhil P",
+      course: "BSc Nursing – Bangalore",
+      feedback:
+        "Britz Education Consultancy made my admission process very smooth. They guided me at every step and helped me secure my seat without any stress.",
+      image: "https://i.pravatar.cc/100?img=1",
+    },
+    {
+      name: "Neha S",
+      course: "MBBS – Chennai",
+      feedback:
+        "I was confused about colleges in Tamil Nadu. Their counseling really helped me choose the right course and college. Very trustworthy service.",
+      image: "https://i.pravatar.cc/100?img=2",
+    },
+    {
+      name: "Rahul K",
+      course: "BTech – Kerala",
+      feedback:
+        "Great support and transparent guidance. I am happy with my admission in Thrissur. I highly recommend Britz to students and parents.",
+      image: "https://i.pravatar.cc/100?img=3",
+    },
+  ];
 
-    const slider = useRef();
-    let tx = 0;
-
-    const slideForward = ()=>{
-        if(tx > -50){
-            tx -= 25;
-        }
-        slider.current.style.transform =  `translateX(${tx}%)`
-    }
-    
-    const slideBackward = ()=>{
-            if(tx < 0){
-                tx += 25;
-            }
-            slider.current.style.transform =  `translateX(${tx}%)`
-    
-    }
-    
   return (
-    <div className='testimonials'>
-      <img src={next_icon} alt="" className='next-btn' onClick={slideForward}/>
-      <img src={back} alt="" className='back-btn' onClick={slideBackward}/>
-    <div className="slider">
-        <ul ref={slider}>
-            <li>
-                <div className="slide">
-                    <div className="user-info">
-                        <img src={user_1} alt="" />
-                        <div>
-                            <h3>Shameem</h3>
-                            <span>Edappla,Kerala</span>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, eligendi excepturi voluptas earum, nihil saepe eveniet unde exercitationem assumenda quidem magni facere asperiores deleniti similique molestiae dolor! Quas, quis illum?</p>
-                </div>
-            </li>
-            <li>
-                <div className="slide">
-                    <div className="user-info">
-                        <img src={user_2} alt="" />
-                        <div>
-                            <h3>Amal</h3>
-                            <span>Kochi,Kerala</span>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, eligendi excepturi voluptas earum, nihil saepe eveniet unde exercitationem assumenda quidem magni facere asperiores deleniti similique molestiae dolor! Quas, quis illum?</p>
-                </div>
-            </li>
-            <li>
-                <div className="slide">
-                    <div className="user-info">
-                        <img src={user_3} alt="" />
-                        <div>
-                            <h3>John</h3>
-                            <span>Kalloor,Kerala</span>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, eligendi excepturi voluptas earum, nihil saepe eveniet unde exercitationem assumenda quidem magni facere asperiores deleniti similique molestiae dolor! Quas, quis illum?</p>
-                </div>
-            </li>
-            <li>
-                <div className="slide">
-                    <div className="user-info">
-                        <img src={user_4} alt="" />
-                        <div>
-                            <h3>Nishad</h3>
-                            <span>Malappuram,Kerala</span>
-                        </div>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, eligendi excepturi voluptas earum, nihil saepe eveniet unde exercitationem assumenda quidem magni facere asperiores deleniti similique molestiae dolor! Quas, quis illum?</p>
-                </div>
-            </li>
-        </ul>
-    </div>
-    </div>
-  )
-}
+    <section className="testimonials">
+      <div className="testimonials-container">
+        <h2 className="testimonials-title">What Our Students Say</h2>
+        <div className="testimonials-grid">
+          {data.map((item, index) => (
+            <div key={index} className="testimonial-card">
+              <img src={item.image} alt={item.name} className="testimonial-img" />
+              <p className="testimonial-feedback">“{item.feedback}”</p>
+              <h3 className="testimonial-name">{item.name}</h3>
+              <span className="testimonial-course">{item.course}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Testimonials
+export default Testimonials;

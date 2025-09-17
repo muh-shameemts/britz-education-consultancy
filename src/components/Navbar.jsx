@@ -76,6 +76,7 @@
 import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import logo from "../assets/logo1.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [sticky, setSticky] = useState(false);
@@ -106,8 +107,8 @@ const Navbar = () => {
 
         {/* Nav Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <li>Home</li>
-
+         <li> <Link to="/">Home</Link></li>
+        
           {/* Dropdown Example 1 */}
           <li
             className={`dropdown ${dropdown === "study" ? "active" : ""}`}
@@ -115,12 +116,12 @@ const Navbar = () => {
             onMouseLeave={() => setDropdown(null)}
             onClick={() => toggleDropdown("study")} // mobile
           >
-            Study Abroad ▾
+            Study Oversease ▾
             <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
-              <li>USA</li>
-              <li>UK</li>
-              <li>Canada</li>
-              <li>Australia</li>
+              <li>Tamilnadu</li>
+              <li>Kerala</li>
+              <li>Karnataka</li>
+              <li>Bangalore</li>
             </ul>
           </li>
 
@@ -133,15 +134,18 @@ const Navbar = () => {
           >
             Student Services ▾
             <ul className={`dropdown-menu ${dropdown === "services" ? "show" : ""}`}>
+              <li>College Admissions</li>
+              <li>Course Selection</li>
               <li>Career Counseling</li>
+              <li>Scholarship / Fee Guidance</li>
               <li>Admission Guidance</li>
               <li>Financial Assistance</li>
-              <li>Visa Assistance</li>
+              <li>Application & Documentation Support</li>
             </ul>
           </li>
 
-          <li>Events</li>
-          <li>Resources</li>
+          <li> <Link to="/about">About Us</Link></li>
+            <li> <Link to="/testimonials">Testimonials</Link></li>
 
           <li>
             <button className="btn">Contact Us</button>
