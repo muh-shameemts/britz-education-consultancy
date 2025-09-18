@@ -110,7 +110,7 @@ import office2 from "../assets/office2.jpg";
 
 const About = () => {
   return (
-    <section className="about">
+    <section style={{  background: "linear-gradient(210deg, #f9fafc 50%, #4a9fdbff 50%)",}} className="about">
       <div className="about-container">
         <h2 className="about-title">About Us</h2>
         <p className="about-intro">

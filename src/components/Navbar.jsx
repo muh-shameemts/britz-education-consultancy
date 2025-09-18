@@ -140,7 +140,7 @@ const Navbar = () => {
           </li>
 
 
-          {/* Dropdown Example 2 */}
+          {/* Dropdown Example 2
           <li
             className={`dropdown ${dropdown === "services" ? "active" : ""}`}
             onMouseEnter={() => setDropdown("services")}
@@ -157,7 +157,31 @@ const Navbar = () => {
               <li>Financial Assistance</li>
               <li>Application & Documentation Support</li>
             </ul>
-          </li>
+          </li> */}
+
+
+
+{/* Dropdown Example 2 */}
+<li
+  className={`dropdown ${dropdown === "services" ? "active" : ""}`}
+  onMouseEnter={() => setDropdown("services")}
+  onMouseLeave={() => setDropdown(null)}
+  onClick={() => toggleDropdown("services")} // for mobile
+>
+  Student Services ▾
+  <ul className={`dropdown-menu ${dropdown === "services" ? "show" : ""}`}>
+    <li><Link to="/studentserices">College Admissions</Link></li>
+    <li><Link to="/studentserices">Course Selection</Link></li>
+    <li><Link to="/studentserices">Career Counseling</Link></li>
+    <li><Link to="/studentserices">Scholarship / Fee Guidance</Link></li>
+    <li><Link to="/studentserices">Admission Guidance</Link></li>
+    <li><Link to="/studentserices">Financial Assistance</Link></li>
+    <li><Link to="/studentserices">Application & Documentation Support</Link></li>
+    {/* <li><Link to="/studentservices">Result Page</Link></li> ✅ Added Result Page */}
+  </ul>
+</li>
+
+
 
           <li> <Link to="/about">About Us</Link></li>
             <li> <Link to="/testimonials">Testimonials</Link></li>

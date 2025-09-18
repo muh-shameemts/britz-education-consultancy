@@ -39,7 +39,7 @@ import Contact from "./Pages/Contact"
 import About from "./Pages/About"
 import Testimonials from "./components/Testimonials/Testimonials"
 import { Route, Routes } from 'react-router-dom'
-
+import StudentServices from "./Pages/StudentServices"
 
 function App() {
   return (
@@ -50,6 +50,7 @@ function App() {
      <Route path='/about' element={<About/>} />
      <Route path='/testimonials' element={<Testimonials/>} />
      <Route path='/contact' element={<Contact/>} />
+     <Route path='/studentserices' element={<StudentServices/>} />
       </Routes>
 
       <Footer/>
