@@ -25,9 +25,9 @@ Reset
   right: 0;
   width: 65%;
   height: 100%;
-  background: #0a68c7;
+  /* background: #73b1ee;
   clip-path: ellipse(80% 100% at 100% 50%);
-  z-index: 0;
+  z-index: 0; */
 }
 
 /* Overlay */
@@ -133,13 +133,13 @@ Reset
   align-items: center;
 }
 
-.hero-image img {
+/* .hero-image img {
   max-width: 80%;
   height: auto;
   border-radius: 16px;
-  background: #fff;
+  background: #bb1e1e;
   padding: 6px;
-}
+} */
 
 /* 📱 Responsive Design */
 

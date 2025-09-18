@@ -48,7 +48,7 @@ function Home() {
   };
 
   return (
-    <div className="hero-container">
+    <div style={{  background: "linear-gradient(290deg, #f9fafc 50%, #4a9fdbff 50%)",}} className="hero-container">
       <div className="overlay"></div>
       <div className="hero-wrapper">
         <Slider {...settings} className="hero-slider">

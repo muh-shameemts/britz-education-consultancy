@@ -1,74 +1,145 @@
 
 
-// import React, { useState } from "react";
-// import { Menu, X } from "lucide-react";
-// import image from "../assets/logo1.png";
-// import './Header.css'
-// function Header() {
+
+// import React, { useEffect, useState } from "react";
+// import "./Navbar.css";
+// import logo from "../assets/logo.png";
+// import { Link } from "react-router-dom";
+
+// const Navbar = () => {
+//   const [sticky, setSticky] = useState(false);
 //   const [menuOpen, setMenuOpen] = useState(false);
+//   const [dropdown, setDropdown] = useState(null);
+
+//   // Sticky effect
+//   useEffect(() => {
+//     const handleScroll = () => setSticky(window.scrollY > 50);
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   // Toggle dropdown on mobile
+//   const toggleDropdown = (name) => {
+//     if (dropdown === name) {
+//       setDropdown(null);
+//     } else {
+//       setDropdown(name);
+//     }
+//   };
+//   // Close dropdown when option clicked
+//   const handleOptionClick = () => {
+//     setDropdown(null);
+//   };
 
 //   return (
-//     <nav className="w-full bg-white fixed -top-5 left-0 z-40 shadow-md">
-//       <div className="container mx-auto flex items-center justify-between">
+//     <header className={`header ${sticky ? "sticky" : ""}`}>
+//       <div className="nav-container">
 //         {/* Logo */}
-//         <div className="-ms-10  flex items-center">
-//           <img className="w-30 mt-1 ms-8 md:w-40" src={image} alt="Logo" />
-//         </div>
+//         <img src={logo} alt="Logo" className="logo" />
 
-//         {/* Mobile Menu Button */}
-//         <button
-//           className="md:hidden text-blue-900"
+//         {/* Nav Links */}
+//         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+//          <li> <Link to="/"><span className="item">Home</span></Link></li>
+        
+//           {/* Dropdown Example 1 */}
+//           <li
+//             className={`dropdown ${dropdown === "study" ? "active" : ""}`}
+//             onMouseEnter={() => setDropdown("study")}
+//             onMouseLeave={() => setDropdown(null)}
+//             onClick={() => toggleDropdown("study")} // mobile
+//           >
+//             Study India ▾
+//             <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
+             
+//               <li>Kerala</li>
+//               <li>Bangalore</li>
+//                 <li>Chennai</li>
+//                  <li>Mangalore</li>
+//             </ul>
+//           </li>
+
+//             <li
+//             className={`dropdown ${dropdown === "abroad" ? "active" : ""}`}
+//             onMouseEnter={() => setDropdown("abroad")}
+//             onMouseLeave={() => setDropdown(null)}
+//             onClick={() => toggleDropdown("abroad")} // mobile
+//           >
+//             Study Abroad ▾
+//             <ul className={`dropdown-menu ${dropdown === "abroad" ? "show" : ""}`}>
+             
+//               <li>Tajikistan</li>
+//             </ul>
+//           </li>
+
+
+//           {/* Dropdown Example 2
+//           <li
+//             className={`dropdown ${dropdown === "services" ? "active" : ""}`}
+//             onMouseEnter={() => setDropdown("services")}
+//             onMouseLeave={() => setDropdown(null)}
+//             onClick={() => toggleDropdown("services")} // mobile
+//           >
+//             Student Services ▾
+//             <ul className={`dropdown-menu ${dropdown === "services" ? "show" : ""}`}>
+//               <li>College Admissions</li>
+//               <li>Course Selection</li>
+//               <li>Career Counseling</li>
+//               <li>Scholarship / Fee Guidance</li>
+//               <li>Admission Guidance</li>
+//               <li>Financial Assistance</li>
+//               <li>Application & Documentation Support</li>
+//             </ul>
+//           </li> */}
+
+
+
+// {/* Dropdown Example 2 */}
+// <li
+//   className={`dropdown ${dropdown === "services" ? "active" : ""}`}
+//   onMouseEnter={() => setDropdown("services")}
+//   onMouseLeave={() => setDropdown(null)}
+//   onClick={() => toggleDropdown("services")} // for mobile
+// >
+//   Student Services ▾
+//   <ul className={`dropdown-menu ${dropdown === "services" ? "show" : ""}`}>
+//     <li><Link to="/studentserices">College Admissions</Link></li>
+//     <li><Link to="/studentserices">Course Selection</Link></li>
+//     <li><Link to="/studentserices">Career Counseling</Link></li>
+//     <li><Link to="/studentserices">Scholarship / Fee Guidance</Link></li>
+//     <li><Link to="/studentserices">Admission Guidance</Link></li>
+//     <li><Link to="/studentserices">Financial Assistance</Link></li>
+//     <li><Link to="/studentserices">Application & Documentation Support</Link></li>
+//     {/* <li><Link to="/studentservices">Result Page</Link></li> ✅ Added Result Page */}
+//   </ul>
+// </li>
+
+
+
+//           <li> <Link to="/about">About Us</Link></li>
+//             <li> <Link to="/testimonials">Testimonials</Link></li>
+
+//           <li>
+//             <button className="btn">
+//               <Link to="/contact">Contact Us</Link>
+//               </button>
+//           </li>
+//         </ul>
+
+//         {/* Hamburger Menu */}
+//         <div
+//           className={`hamburger ${menuOpen ? "active" : ""}`}
 //           onClick={() => setMenuOpen(!menuOpen)}
 //         >
-//           {menuOpen ? <X size={28} /> : <Menu className=" " size={36} />}
-//         </button>
-
-//         {/* Navigation Links + Contact Button for Large Screens */}
-//         <div className="hidden md:flex items-center gap-25">
-//           <ul
-//           className="flex gap-17 ">
-//             {["Courses", "Colleges", "About", "Services", "Collabrations"].map((item, index) => (
-//               <li key={index}>
-//                 <a href="#"   id="list" className="text-lg text-blue-900 hover:text-blue transition-all">
-//                   {item}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//           {/* Contact Button (Large Screens) */}
-//          <div className="-me-12">
-//             <button className="bg-blue-900 text-amber-50 px-7 py-2 rounded-3 hover:bg-white hover:text-black border border-blue-900">
-//               Contact Us
-//             </button>
-//          </div>
+//           <span></span>
+//           <span></span>
+//           <span></span>
 //         </div>
 //       </div>
-
-//       {/* Mobile Menu */}
-//       {menuOpen && (
-//         <div className=" md:hidden rounded-3 shadow-lg flex flex-col items-center gap-4 bg-white shadow-md pe-4 absolute  left-44 top-16">
-//           <ul className="w-full mt-1 text-center">
-//             {["Study Overseas", "Student Help", "Courses", "Colleges", "About Us"].map((item, index) => (
-//               <li key={index} className="p-2">
-//                 <a href="#" id="lists"  style={{textDecoration:"none"}} className="text-lg text-blue-900 hover:text-black transition-all">
-//                   {item}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//           {/* Contact Button (Small Screens) */}
-//         <div className="-mt-7 ms-4 mb-3">
-//             <button className="bg-blue-900 text-amber-50 px-3 py-2 rounded-4 hover:bg-white hover:text-black border border-blue-900">
-//               Contact Us
-//             </button>
-//         </div>
-//         </div>
-//       )}
-//     </nav>
+//     </header>
 //   );
-// }
+// };
 
-// export default Header;
+// export default Navbar;
 
 
 
@@ -99,6 +170,12 @@ const Navbar = () => {
     }
   };
 
+  // Close dropdown when option clicked
+  const handleOptionClick = () => {
+    setDropdown(null);
+    setMenuOpen(false); // also close mobile menu
+  };
+
   return (
     <header className={`header ${sticky ? "sticky" : ""}`}>
       <div className="nav-container">
@@ -107,8 +184,12 @@ const Navbar = () => {
 
         {/* Nav Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-         <li> <Link to="/"><span className="item">Home</span></Link></li>
-        
+          <li>
+            <Link to="/" onClick={() => setMenuOpen(false)}>
+              <span className="item">Home</span>
+            </Link>
+          </li>
+
           {/* Dropdown Example 1 */}
           <li
             className={`dropdown ${dropdown === "study" ? "active" : ""}`}
@@ -118,15 +199,23 @@ const Navbar = () => {
           >
             Study India ▾
             <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
-             
-              <li>Kerala</li>
-              <li>Bangalore</li>
-                <li>Chennai</li>
-                 <li>Mangalore</li>
+              <li onClick={handleOptionClick}>
+                <Link to="/kerala">Kerala</Link>
+              </li>
+              <li onClick={handleOptionClick}>
+                <Link to="/bangalore">Bangalore</Link>
+              </li>
+              <li onClick={handleOptionClick}>
+                <Link to="/chennai">Chennai</Link>
+              </li>
+              <li onClick={handleOptionClick}>
+                <Link to="/mangalore">Mangalore</Link>
+              </li>
             </ul>
           </li>
 
-            <li
+          {/* Dropdown Example 2 */}
+          <li
             className={`dropdown ${dropdown === "abroad" ? "active" : ""}`}
             onMouseEnter={() => setDropdown("abroad")}
             onMouseLeave={() => setDropdown(null)}
@@ -134,62 +223,60 @@ const Navbar = () => {
           >
             Study Abroad ▾
             <ul className={`dropdown-menu ${dropdown === "abroad" ? "show" : ""}`}>
-             
-              <li>Tajikistan</li>
+              <li onClick={handleOptionClick}>
+                <Link to="/tajikistan">Tajikistan</Link>
+              </li>
             </ul>
           </li>
 
-
-          {/* Dropdown Example 2
+          {/* Dropdown Example 3 */}
           <li
             className={`dropdown ${dropdown === "services" ? "active" : ""}`}
             onMouseEnter={() => setDropdown("services")}
             onMouseLeave={() => setDropdown(null)}
-            onClick={() => toggleDropdown("services")} // mobile
+            onClick={() => toggleDropdown("services")} // for mobile
           >
             Student Services ▾
             <ul className={`dropdown-menu ${dropdown === "services" ? "show" : ""}`}>
-              <li>College Admissions</li>
-              <li>Course Selection</li>
-              <li>Career Counseling</li>
-              <li>Scholarship / Fee Guidance</li>
-              <li>Admission Guidance</li>
-              <li>Financial Assistance</li>
-              <li>Application & Documentation Support</li>
+              <li onClick={handleOptionClick}>
+                <Link to="/studentservices">College Admissions</Link>
+              </li>
+              <li onClick={handleOptionClick}>
+                <Link to="/studentservices">Course Selection</Link>
+              </li>
+              <li onClick={handleOptionClick}>
+                <Link to="/studentservices">Career Counseling</Link>
+              </li>
+              <li onClick={handleOptionClick}>
+                <Link to="/studentservices">Scholarship / Fee Guidance</Link>
+              </li>
+              <li onClick={handleOptionClick}>
+                <Link to="/studentservices">Admission Guidance</Link>
+              </li>
+              <li onClick={handleOptionClick}>
+                <Link to="/studentservices">Financial Assistance</Link>
+              </li>
+              <li onClick={handleOptionClick}>
+                <Link to="/studentservices">Application & Documentation Support</Link>
+              </li>
             </ul>
-          </li> */}
-
-
-
-{/* Dropdown Example 2 */}
-<li
-  className={`dropdown ${dropdown === "services" ? "active" : ""}`}
-  onMouseEnter={() => setDropdown("services")}
-  onMouseLeave={() => setDropdown(null)}
-  onClick={() => toggleDropdown("services")} // for mobile
->
-  Student Services ▾
-  <ul className={`dropdown-menu ${dropdown === "services" ? "show" : ""}`}>
-    <li><Link to="/studentserices">College Admissions</Link></li>
-    <li><Link to="/studentserices">Course Selection</Link></li>
-    <li><Link to="/studentserices">Career Counseling</Link></li>
-    <li><Link to="/studentserices">Scholarship / Fee Guidance</Link></li>
-    <li><Link to="/studentserices">Admission Guidance</Link></li>
-    <li><Link to="/studentserices">Financial Assistance</Link></li>
-    <li><Link to="/studentserices">Application & Documentation Support</Link></li>
-    {/* <li><Link to="/studentservices">Result Page</Link></li> ✅ Added Result Page */}
-  </ul>
-</li>
-
-
-
-          <li> <Link to="/about">About Us</Link></li>
-            <li> <Link to="/testimonials">Testimonials</Link></li>
+          </li>
 
           <li>
-            <button className="btn">
+            <Link to="/about" onClick={() => setMenuOpen(false)}>
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/testimonials" onClick={() => setMenuOpen(false)}>
+              Testimonials
+            </Link>
+          </li>
+
+          <li>
+            <button className="btn" onClick={() => setMenuOpen(false)}>
               <Link to="/contact">Contact Us</Link>
-              </button>
+            </button>
           </li>
         </ul>
 
