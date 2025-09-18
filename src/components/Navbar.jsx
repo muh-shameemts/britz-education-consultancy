@@ -200,16 +200,16 @@ const Navbar = () => {
             Study India ▾
             <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
               <li onClick={handleOptionClick}>
-                <Link to="/kerala">Kerala</Link>
+               <li><Link to="/kerala">Kerala</Link></li>
               </li>
               <li onClick={handleOptionClick}>
-                <Link to="/bangalore">Bangalore</Link>
+                 <li><Link to="/bangalore">Bengaluru</Link></li>
               </li>
               <li onClick={handleOptionClick}>
-                <Link to="/chennai">Chennai</Link>
+                 <li><Link to="/chennai">Chennai</Link></li>
               </li>
               <li onClick={handleOptionClick}>
-                <Link to="/mangalore">Mangalore</Link>
+                 <li><Link to="/mangalore">Mangluru</Link></li>
               </li>
             </ul>
           </li>
@@ -224,7 +224,7 @@ const Navbar = () => {
             Study Abroad ▾
             <ul className={`dropdown-menu ${dropdown === "abroad" ? "show" : ""}`}>
               <li onClick={handleOptionClick}>
-                <Link to="/tajikistan">Tajikistan</Link>
+                <Link to="/studyabroad">Tajikistan</Link>
               </li>
             </ul>
           </li>

@@ -1,0 +1,160 @@
+/* Page Title */
+.page-title {
+  margin-top: 100px;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+  color: #0a68c7;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s ease-in-out;
+}
+.page-title.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid */
+.college-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Card */
+.college-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+.college-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.college-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.college-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.college-card h3 {
+  color: #0a68c7;
+  margin-bottom: 0.3rem;
+}
+.college-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+.view-btn {
+  margin-top: 0.5rem;
+  background: #0a68c7;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.view-btn:hover {
+  background: #ff5722;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+.modal-content img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.modal-content h2 {
+  color: #0a68c7;
+  margin-bottom: 0.5rem;
+}
+.modal-content p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+.modal-content ul {
+  text-align: left;
+  padding-left: 1.2rem;
+}
+.modal-content li {
+  font-size: 0.9rem;
+  padding: 4px 0;
+  border-bottom: 1px solid #eee;
+}
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #ff5722;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background: #e64a19;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-title { font-size: 1.5rem; }
+  .college-grid { gap: 1rem; padding: 1rem; }
+  .college-card img { height: 150px; }
+  .modal-content img { height: 160px; }
+}
+@media (max-width: 480px) {
+  .college-card { padding: 0.8rem; }
+  .college-card img { height: 120px; }
+  .college-card h3 { font-size: 1rem; }
+  .modal-content { padding: 1rem; }
+  .modal-content img { height: 140px; }
+}

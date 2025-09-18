@@ -209,7 +209,7 @@ const ContactPage = () => {
 
       {/* Social Media Links */}
       <div style={styles.socials}>
-        <a href="https://wa.me/9746416907" target="_blank" rel="noreferrer" style={styles.iconLink}>
+        <a href="https://wa.me/" target="_blank" rel="noreferrer" style={styles.iconLink}>
           <FaWhatsapp size={40} color="#25D366" />
         </a>
         <a href="https://www.instagram.com/britz_education?igsh=Z202aXdjaTBjMmFy" target="_blank" rel="noreferrer" style={styles.iconLink}>

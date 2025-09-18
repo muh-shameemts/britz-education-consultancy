@@ -48,7 +48,7 @@ function Home() {
   };
 
   return (
-    <div style={{  background: "linear-gradient(290deg, #f9fafc 50%, #4a9fdbff 50%)",}} className="hero-container">
+    <div style={{  background: "linear-gradient(290deg, #f9fafc 50%, #4a9fdbff 50%)",marginTop:"80px"}} className="hero-container">
       <div className="overlay"></div>
       <div className="hero-wrapper">
         <Slider {...settings} className="hero-slider">
@@ -62,7 +62,8 @@ function Home() {
                   <div className="button-container">
                     <button className="cta-button"><Link to="/contact"><span className="free">Free Consultation</span></Link></button>
                     <a
-                      href="https://wa.me/9746416907" // Replace with your WhatsApp number
+                    
+                      href="https://wa.me/9746416790"  // Replace with your WhatsApp number
                       className="whatsapp-button"
                       target="_blank"
                       rel="noopener noreferrer"

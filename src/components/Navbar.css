@@ -199,6 +199,16 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+
+  .logo {
+    margin-top: 3px;
+  margin-left: -17px;
+  height: 63px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
   .nav-links {
     position: absolute;
     top: 65px;
