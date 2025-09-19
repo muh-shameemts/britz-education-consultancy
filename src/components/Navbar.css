@@ -216,6 +216,7 @@
     flex-direction: column;
     width: 210px;
     padding: 20px;
+    margin-top: 17px;
     gap: 15px;
     display: none;
     border-radius: 10px;
@@ -246,6 +247,7 @@
   }
 
   .dropdown-menu li {
+    
     border-bottom: 1px solid #eee;
     padding: 12px 15px;
   }

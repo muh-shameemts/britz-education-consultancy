@@ -171,10 +171,12 @@ const Navbar = () => {
   };
 
   // Close dropdown when option clicked
+
   const handleOptionClick = () => {
-    setDropdown(null);
-    setMenuOpen(false); // also close mobile menu
-  };
+  setDropdown(null);
+  setMenuOpen(false);
+  window.scrollTo({ top: 0, behavior: "smooth" }); // 👈 force scroll on click
+};
 
   return (
     <header className={`header ${sticky ? "sticky" : ""}`}>
@@ -184,10 +186,17 @@ const Navbar = () => {
 
         {/* Nav Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <li>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              <span className="item">Home</span>
-            </Link>
+          <li >
+          <Link 
+  to="/" 
+  onClick={() => {
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}
+>
+  Home
+</Link>
+
           </li>
 
           {/* Dropdown Example 1 */}
@@ -196,6 +205,7 @@ const Navbar = () => {
             onMouseEnter={() => setDropdown("study")}
             onMouseLeave={() => setDropdown(null)}
             onClick={() => toggleDropdown("study")} // mobile
+          
           >
             Study India ▾
             <ul className={`dropdown-menu mt-1 ${dropdown === "study" ? "show" : ""}`}>
@@ -262,14 +272,26 @@ const Navbar = () => {
           </li>
 
           <li>
-            <Link to="/about" onClick={() => setMenuOpen(false)}>
-              About Us
-            </Link>
+           <Link 
+  to="/about" 
+  onClick={() => {
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}
+>
+  About Us
+</Link>
           </li>
           <li>
-            <Link to="/testimonials" onClick={() => setMenuOpen(false)}>
-              Testimonials
-            </Link>
+            <Link 
+  to="/testimonials" 
+  onClick={() => {
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}
+>
+  Testimonials
+</Link>
           </li>
 
           <li>
