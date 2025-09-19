@@ -198,7 +198,7 @@ const Navbar = () => {
             onClick={() => toggleDropdown("study")} // mobile
           >
             Study India ▾
-            <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
+            <ul className={`dropdown-menu mt-1 ${dropdown === "study" ? "show" : ""}`}>
               
                <li onClick={handleOptionClick}><Link to="/kerala">Kerala</Link></li>
              
@@ -221,7 +221,7 @@ const Navbar = () => {
             onClick={() => toggleDropdown("abroad")} // mobile
           >
             Study Abroad ▾
-            <ul className={`dropdown-menu ${dropdown === "abroad" ? "show" : ""}`}>
+            <ul className={`dropdown-menu mt-1 ${dropdown === "abroad" ? "show" : ""}`}>
               <li onClick={handleOptionClick}>
                 <Link to="/studyabroad">Tajikistan</Link>
               </li>
@@ -236,7 +236,7 @@ const Navbar = () => {
             onClick={() => toggleDropdown("services")} // for mobile
           >
             Student Services ▾
-            <ul className={`dropdown-menu ${dropdown === "services" ? "show" : ""}`}>
+            <ul className={`dropdown-menu  mt-1 ${dropdown === "services" ? "show" : ""}`}>
               <li onClick={handleOptionClick}>
                 <Link to="/studentservices">College Admissions</Link>
               </li>

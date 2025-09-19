@@ -63,7 +63,7 @@ function Home() {
                     <button className="cta-button"><Link to="/contact"><span className="free">Free Consultation</span></Link></button>
                     <a
                     
-                      href="https://wa.me/9746416790"  // Replace with your WhatsApp number
+                      href="https://wa.me/9746416907"  // Replace with your WhatsApp number
                       className="whatsapp-button"
                       target="_blank"
                       rel="noopener noreferrer"
