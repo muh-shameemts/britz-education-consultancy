@@ -133,9 +133,36 @@ function Footer() {
           <div className="col-md-2">
             <h6 className="fw-bold text-uppercase mb-3">Links</h6>
             <ul className="list-unstyled footer-links small">
-              <li><Link to="/" className="text-white text-decoration-none">Home</Link></li>
-              <li><Link to="/about" className="text-white text-decoration-none">About Us</Link></li>
-              <li><Link to="/testimonials" className="text-white text-decoration-none">Testimonials</Link></li>
+              <li> <Link 
+                to="/" 
+                className="text-white text-decoration-none"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Home
+              </Link>
+             </li>
+              <li> <Link 
+               to="/about" 
+               className="text-white text-decoration-none"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+               About Us
+              </Link>
+             </li>
+             <li> <Link 
+                to="/testimonials"
+               className="text-white text-decoration-none"
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+              Testimonials
+              </Link>
+             </li>
             </ul>
           </div>
 

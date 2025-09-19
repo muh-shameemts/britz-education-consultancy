@@ -296,7 +296,16 @@ const Navbar = () => {
 
           <li>
             <button className="btn" onClick={() => setMenuOpen(false)}>
-              <Link to="/contact">Contact Us</Link>
+             <Link 
+  to="/contact" 
+  onClick={() => {
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}
+>
+  Contact Us
+</Link>
+
             </button>
           </li>
         </ul>
