@@ -40,7 +40,7 @@
 //         {/* Nav Links */}
 //         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
 //          <li> <Link to="/"><span className="item">Home</span></Link></li>
-        
+
 //           {/* Dropdown Example 1 */}
 //           <li
 //             className={`dropdown ${dropdown === "study" ? "active" : ""}`}
@@ -50,7 +50,7 @@
 //           >
 //             Study India ▾
 //             <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
-             
+
 //               <li>Kerala</li>
 //               <li>Bangalore</li>
 //                 <li>Chennai</li>
@@ -66,7 +66,7 @@
 //           >
 //             Study Abroad ▾
 //             <ul className={`dropdown-menu ${dropdown === "abroad" ? "show" : ""}`}>
-             
+
 //               <li>Tajikistan</li>
 //             </ul>
 //           </li>
@@ -173,10 +173,10 @@ const Navbar = () => {
   // Close dropdown when option clicked
 
   const handleOptionClick = () => {
-  setDropdown(null);
-  setMenuOpen(false);
-  window.scrollTo({ top: 0, behavior: "smooth" }); // 👈 force scroll on click
-};
+    setDropdown(null);
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" }); // 👈 force scroll on click
+  };
 
   return (
     <header className={`header ${sticky ? "sticky" : ""}`}>
@@ -186,16 +186,16 @@ const Navbar = () => {
 
         {/* Nav Links */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <li >
-          <Link 
-  to="/" 
-  onClick={() => {
-    setMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }}
->
-  Home
-</Link>
+          <li className="option">
+            <Link
+              to="/"
+              onClick={() => {
+                setMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+            Home
+            </Link>
 
           </li>
 
@@ -205,21 +205,29 @@ const Navbar = () => {
             onMouseEnter={() => setDropdown("study")}
             onMouseLeave={() => setDropdown(null)}
             onClick={() => toggleDropdown("study")} // mobile
-          
+
           >
-            Study India ▾
+        Study India ▾
             <ul className={`dropdown-menu mt-1 ${dropdown === "study" ? "show" : ""}`}>
-              
-               <li onClick={handleOptionClick}><Link to="/kerala">Kerala</Link></li>
-             
-              
-                 <li onClick={handleOptionClick}><Link to="/bangalore">Bengaluru</Link></li>
-              
-              
-                 <li  onClick={handleOptionClick}><Link to="/chennai">Chennai</Link></li>
-             
-                 <li  onClick={handleOptionClick}><Link to="/mangalore">Mangluru</Link></li>
-              
+
+              <div ><Link to="/kerala">
+                <li onClick={handleOptionClick}>Kerala</li></Link>
+              </div>
+
+              <div>  <Link to="/bangalore">
+                <li onClick={handleOptionClick}>Bangalore</li></Link>
+              </div>
+
+
+              <div><Link to="/chennai">
+                <li onClick={handleOptionClick}>Chennai</li></Link>
+              </div>
+
+
+              <div>
+                <Link to="/mangalore"><li onClick={handleOptionClick}>Mangalore</li></Link>
+              </div>
+
             </ul>
           </li>
 
@@ -232,9 +240,13 @@ const Navbar = () => {
           >
             Study Abroad ▾
             <ul className={`dropdown-menu mt-1 ${dropdown === "abroad" ? "show" : ""}`}>
-              <li onClick={handleOptionClick}>
-                <Link to="/studyabroad">Tajikistan</Link>
-              </li>
+              <div>
+                 <Link to="/studyabroad">
+                 <li onClick={handleOptionClick}>Tajikistan</li>
+                 </Link>
+
+              </div>
+
             </ul>
           </li>
 
@@ -247,64 +259,85 @@ const Navbar = () => {
           >
             Student Services ▾
             <ul className={`dropdown-menu  mt-1 ${dropdown === "services" ? "show" : ""}`}>
-              <li onClick={handleOptionClick}>
-                <Link to="/studentservices">College Admissions</Link>
-              </li>
-              <li onClick={handleOptionClick}>
-                <Link to="/studentservices">Course Selection</Link>
-              </li>
-              <li onClick={handleOptionClick}>
-                <Link to="/studentservices">Career Counseling</Link>
-              </li>
-              <li onClick={handleOptionClick}>
-                <Link to="/studentservices">Scholarship / Fee Guidance</Link>
-              </li>
-              <li onClick={handleOptionClick}>
-                <Link to="/studentservices">Admission Guidance</Link>
-              </li>
-              <li onClick={handleOptionClick}>
-                <Link to="/studentservices">Financial Assistance</Link>
-              </li>
-              <li onClick={handleOptionClick}>
-                <Link to="/studentservices">Application & Documentation Support</Link>
-              </li>
+             <div>
+  <Link to="/studentservices">
+    <li onClick={handleOptionClick}>College Admissions</li>
+  </Link>
+</div>
+
+<div>
+  <Link to="/studentservices">
+    <li onClick={handleOptionClick}>Course Selection</li>
+  </Link>
+</div>
+
+<div>
+  <Link to="/studentservices">
+    <li onClick={handleOptionClick}>Career Counseling</li>
+  </Link>
+</div>
+
+<div>
+  <Link to="/studentservices">
+    <li onClick={handleOptionClick}>Scholarship / Fee Guidance</li>
+  </Link>
+</div>
+
+<div>
+  <Link to="/studentservices">
+    <li onClick={handleOptionClick}>Admission Guidance</li>
+  </Link>
+</div>
+
+<div>
+  <Link to="/studentservices">
+    <li onClick={handleOptionClick}>Financial Assistance</li>
+  </Link>
+</div>
+
+<div>
+  <Link to="/studentservices">
+    <li onClick={handleOptionClick}>Application & Documentation Support</li>
+  </Link>
+</div>
+
             </ul>
           </li>
 
           <li>
-           <Link 
-  to="/about" 
-  onClick={() => {
-    setMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }}
->
-  About Us
-</Link>
+            <Link
+              to="/about"
+              onClick={() => {
+                setMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              About Us
+            </Link>
           </li>
           <li>
-            <Link 
-  to="/testimonials" 
-  onClick={() => {
-    setMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }}
->
-  Testimonials
-</Link>
+            <Link
+              to="/testimonials"
+              onClick={() => {
+                setMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              Testimonials
+            </Link>
           </li>
 
           <li>
             <button className="btn" onClick={() => setMenuOpen(false)}>
-             <Link 
-  to="/contact" 
-  onClick={() => {
-    setMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }}
->
-  Contact Us
-</Link>
+              <Link
+                to="/contact"
+                onClick={() => {
+                  setMenuOpen(false);
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Contact Us
+              </Link>
 
             </button>
           </li>

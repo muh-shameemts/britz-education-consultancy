@@ -1,35 +1,23 @@
 import React, { useEffect, useState } from "react";
-import stThomas from "../assets/college.jpg";
-import christ from "../assets/college.jpg";
+import kmct from "../assets/kmct.jpg";
+import christ from "../assets/jai.jpg";
 import loyola from "../assets/college.jpg";
 import aloysius from "../assets/college.jpg";
 import "./Keralam.css";
 
 const colleges = [
   {
-    name: "St. Thomas College",
-    location: "Thrissur • UG/PG in Arts, Commerce, and Science.",
-    img: stThomas,
+    name: "K.M.C.T College Of Engineering",
+    location: " Kallanthode, Manassery, Mukkam, Kozhikode, Kerala, India",
+    img: kmct,
     courses: ["B.A. English", "B.Com", "B.Sc. Chemistry", "M.A. History", "M.Sc. Physics"],
   },
   {
-    name: "Govt. Engineering College",
-    location: "Kozhikode • Premier institute for BTech and MTech.",
+    name: "JAI BHARATH ARTS AND SCIENCE COLLEGE",
+    location: "JAI BHARATH ARTS AND SCIENCE COLLEGE",
     img: christ,
     courses: ["B.Tech Computer Science", "B.Tech Mechanical", "M.Tech Civil", "M.Tech ECE"],
-  },
-  {
-    name: "Medical College Trivandrum",
-    location: "Top govt. medical college with global recognition.",
-    img: loyola,
-    courses: ["MBBS", "BDS", "MD General Medicine", "MS Orthopedics", "Nursing"],
-  },
-  {
-    name: "St. Aloysius College",
-    location: "Mangaluru • Historic institution offering Arts, Science, and Commerce.",
-    img: aloysius,
-    courses: ["B.Sc. Zoology", "B.A. Economics", "M.Com", "MBA"],
-  },
+  }
 ];
 
 const StudyIndia = () => {

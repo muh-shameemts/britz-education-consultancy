@@ -54,7 +54,7 @@ const StudyIndia = () => {
 
   return (
     <section id="kerala">
-      <h2 className="page-title">🎓 Top Colleges in Kerala</h2>
+      <h2 className="page-title">🎓 Top Colleges in Chennai</h2>
       <div className="college-grid">
         {colleges.map((college, index) => (
           <div
