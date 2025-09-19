@@ -212,8 +212,7 @@ function Footer() {
     target="_blank" 
     rel="noopener noreferrer"
   >
-    <iframe
-      src="https://maps.app.goo.gl/n1cg29EDW4CHCijx5"
+    <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d125421.38467484222!2d75.9271436069073!3d10.779241913425569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3ba7b900694b0e05%3A0xc1828c60be4cfaf1!2sQ2H5%2BPR3%2C%20Sukapuram%20Hospital%20Rd%2C%20Edappal%2C%20Kerala%20679576!3m2!1d10.7792528!2d76.0095455!5e0!3m2!1sen!2sin!4v1758277409145!5m2!1sen!2sin" 
       width="100%"
       height="100"
       style={{ border: 0, borderRadius: "10px", pointerEvents: "none" }}
