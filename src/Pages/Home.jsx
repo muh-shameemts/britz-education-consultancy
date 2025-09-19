@@ -60,7 +60,9 @@ function Home() {
                   <h2>{data.title}</h2>
                   <p>{data.description}</p>
                   <div className="button-container">
-                    <button className="cta-button"><Link to="/contact"><span className="free">Free Consultation</span></Link></button>
+                    <button className="cta-button"><Link  onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }} to="/contact"><span className="free">Free Consultation</span></Link></button>
                     <a
                     
                       href="https://wa.me/9746416907"  // Replace with your WhatsApp number
