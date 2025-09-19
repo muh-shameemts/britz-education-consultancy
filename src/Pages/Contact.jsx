@@ -187,11 +187,11 @@ const ContactPage = () => {
       <div style={styles.contactInfo}>
         <div style={styles.card}>
           <FaPhone size={28} color="#2c3e50" />
-          <p>+91 98765 43210</p>
+          <p>+91 74033 14744</p>
         </div>
         <div style={styles.card}>
           <FaEnvelope size={28} color="#2c3e50" />
-          <p>info@consultancy.com</p>
+          <p>britzeducation@gmail.com</p>
         </div>
         <div style={styles.card}>
                 <FaGlobe size={28} color="#2c3e50" />
@@ -201,7 +201,7 @@ const ContactPage = () => {
         rel="noreferrer" 
         style={{ textDecoration: "none", color: "#2c3e50" }}
       >
-        <p style={{ margin: 0 }}>Britz-website.com</p>
+        <p style={{ margin: 0 }}>britz-website.com</p>
       </a>
 
         </div>

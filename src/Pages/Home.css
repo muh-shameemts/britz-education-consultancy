@@ -245,11 +245,14 @@
     text-align: center;
   }
 
-  .hero-text h1 {
-        color: rgb(255, 1, 1);
-    font-size: 3rem;
-    line-height: 1.3;
-  }
+ .hero-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #030303;
+  text-shadow: 0 0 1px #000000, 0 0 2px #273e70; /* glowing effect */
+  margin-bottom: 2.4rem;
+  line-height: 1.2;
+}
 
   .hero-text p {
     font-size: 1rem;

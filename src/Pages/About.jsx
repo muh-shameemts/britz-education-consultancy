@@ -105,7 +105,7 @@
 
 import React from "react";
 import "./About.css"; 
-import office1 from "../assets/office1.jpg";
+import office1 from "../assets/britz.jpg";
 import office2 from "../assets/office2.jpg";
 
 const About = () => {
