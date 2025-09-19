@@ -223,7 +223,7 @@ const ContactPage = () => {
       {/* Google Map */}
       <div style={styles.mapContainer}>
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3912.605750768038!2d75.98300227492293!3d10.889402589285374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7bbf48ebf02ab%3A0xf3a52c6d5a4a96d7!2sEdappal%2C%20Kerala!5e0!3m2!1sen!2sin!4v1695112345678!5m2!1sen!2sin"
+          src="https://maps.app.goo.gl/n1cg29EDW4CHCijx5"
           width="100%"
           height="300"
           style={{ border: 0, borderRadius: "10px" }}

@@ -208,12 +208,12 @@ function Footer() {
               {/* Small Map Preview */}
 <div className="map-preview" style={{ maxWidth: "300px", margin: "20px auto" }}>
   <a 
-    href="https://www.google.com/maps/place/Edappal,+Kerala" 
+    href="https://maps.app.goo.gl/n1cg29EDW4CHCijx5" 
     target="_blank" 
     rel="noopener noreferrer"
   >
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.479444567047!2d76.04194731480223!3d10.882080492246179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b03f6b3bcd6f%3A0x9b0c2a2f4a2e02b4!2sEdappal%2C%20Kerala!5e0!3m2!1sen!2sin!4v1694856634567!5m2!1sen!2sin"
+      src="https://maps.app.goo.gl/n1cg29EDW4CHCijx5"
       width="100%"
       height="100"
       style={{ border: 0, borderRadius: "10px", pointerEvents: "none" }}
