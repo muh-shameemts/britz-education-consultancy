@@ -199,18 +199,17 @@ const Navbar = () => {
           >
             Study India ▾
             <ul className={`dropdown-menu ${dropdown === "study" ? "show" : ""}`}>
-              <li onClick={handleOptionClick}>
-               <li><Link to="/kerala">Kerala</Link></li>
-              </li>
-              <li onClick={handleOptionClick}>
-                 <li><Link to="/bangalore">Bengaluru</Link></li>
-              </li>
-              <li onClick={handleOptionClick}>
-                 <li><Link to="/chennai">Chennai</Link></li>
-              </li>
-              <li onClick={handleOptionClick}>
-                 <li><Link to="/mangalore">Mangluru</Link></li>
-              </li>
+              
+               <li onClick={handleOptionClick}><Link to="/kerala">Kerala</Link></li>
+             
+              
+                 <li onClick={handleOptionClick}><Link to="/bangalore">Bengaluru</Link></li>
+              
+              
+                 <li  onClick={handleOptionClick}><Link to="/chennai">Chennai</Link></li>
+             
+                 <li  onClick={handleOptionClick}><Link to="/mangalore">Mangluru</Link></li>
+              
             </ul>
           </li>
 
